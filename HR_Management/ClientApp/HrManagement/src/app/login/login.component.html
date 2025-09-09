@@ -1,0 +1,51 @@
+<div class="w-75 margin-auto"  *ngIf="accountService.currentUserName == '' ||
+                accountService.currentUserName  == null ||
+                accountService.currentUserName == undefined">
+  <div class="form-container" >
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmitted()" >
+      <div class="form-field flex">
+        <div class="w-25">
+          <label for="email" class="form-label pt">Email</label>
+        </div>
+        <div class="flex-1">
+          <input type="text" id="email" class="form-input" formControlName="email" />
+          <span class="text-red" *ngIf="(login_emailFormControl.touched || isLoginFormSubmitted)
+                && (login_emailFormControl.errors?.['required'])">Email Can`t Be Blank</span>
+          <span class="text-red" *ngIf="(login_emailFormControl.touched || isLoginFormSubmitted)
+      && (login_emailFormControl.errors?.['email'])">Email must Be In A Proper Email Address Format</span>
+        </div>
+      </div>
+
+
+      <div class="form-field flex">
+        <div class="w-25">
+          <label for="password" class="form-label pt">Password</label>
+        </div>
+        <div class="flex-1">
+          <input type="password" id="password" class="form-input" formControlName="password" />
+          <span class="text-red" *ngIf="(login_passwordFormControl.touched || isLoginFormSubmitted)
+           && (login_passwordFormControl.errors?.['required'])">
+            password Can`t Be Blank
+          </span>
+
+        </div>
+      </div>
+
+      
+
+
+
+      <div class="form-field flex">
+        <div class="w-25">
+
+        </div>
+        <div class="flex-1">
+          <button type="submit" class="button button-green-back">Log In</button>
+        </div>
+      </div>
+
+
+    </form>
+  </div>
+</div>

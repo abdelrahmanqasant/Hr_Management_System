@@ -1,0 +1,51 @@
+<div class="container mt-4">
+  <h2>➕ Add Department</h2>
+
+
+
+
+  <form [formGroup]="addDepartmentForm" (ngSubmit)="addDepartment()">
+    <!-- Department Name -->
+    <div class="mb-3">
+      <label for="name" class="form-label">Department Name</label>
+      <input id="name" type="text" class="form-control" formControlName="name" placeholder="Enter Department name" />
+      <div *ngIf="addDepartment_nameFormControl.invalid && (addDepartment_nameFormControl.touched ||
+           isAddDepartmentFormSubmitted)"
+           class="text-danger">
+        Department name is required
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <input id="description" type="text" class="form-control" formControlName="description" placeholder="Enter address" />
+      <div *ngIf="addDepartment_descriptionFormControl.invalid && (addDepartment_descriptionFormControl.touched ||
+           isAddDepartmentFormSubmitted)"
+           class="text-danger">
+        Description is required
+      </div>
+    </div>
+
+    <!-- Company Id -->
+    <div class="mb-3">
+      <label for="companyId" class="form-label">company</label>
+      <select id="companyId"  class="form-select" formControlName="companyId">
+        <option value="">--select company --</option>
+        <option *ngFor="let company of companies" [value] =" company.id">{{company.name}}</option>
+      </select>
+             
+      <div *ngIf="addDepartment_companyIdFormControl.invalid && (addDepartment_companyIdFormControl.touched ||
+           isAddDepartmentFormSubmitted)"
+           class="text-danger">
+        company Id is required
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-success" [disabled]="addDepartmentForm.invalid">
+      <i class="bi bi-plus-circle"></i> Add Department
+    </button>
+  </form>
+</div>
+

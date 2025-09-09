@@ -1,0 +1,40 @@
+<div class="container mt-4">
+  <h2>✏️ Edit Department</h2>
+
+  <form [formGroup]="editDepartmentForm" (ngSubmit)="updateDepartment()">
+    <div class="mb-3">
+      <label class="form-label">Department Name</label>
+      <input formControlName="name" class="form-control" placeholder="Enter company name" />
+      <div *ngIf="editDepartment_nameFormControl.invalid
+           && (editDepartment_nameFormControl.touched || isFormSubmitted)" class="text-danger">
+        Department name is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Description</label>
+      <input formControlName="description" class="form-control" placeholder="Enter Description" />
+      <div *ngIf="editDepartment_descriptionFormControl.invalid
+           && (editDepartment_descriptionFormControl.touched || isFormSubmitted)" class="text-danger">
+        Department Description is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Company</label>
+      <select id="companyId" formControlName="companyId" class="form-select"  >
+        <option value="">--Select Company --</option>
+        <option *ngFor="let company of companies" [value]="company.id">{{company.name}}</option>
+      </select>
+      <div *ngIf="editDepartment_companyIdFormControl.invalid
+           && (editDepartment_companyIdFormControl.touched || isFormSubmitted)" class="text-danger">
+        Company  is required
+      </div>
+    </div>
+
+    <button class="btn btn-success" type="submit" [disabled]="editDepartmentForm.invalid">
+      <i class="bi bi-save"></i> Save Changes
+    </button>
+    <a class="btn btn-secondary ms-2" routerLink="/Companies">Cancel</a>
+  </form>
+</div>

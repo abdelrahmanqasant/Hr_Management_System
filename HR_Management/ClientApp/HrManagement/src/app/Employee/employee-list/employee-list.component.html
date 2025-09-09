@@ -1,0 +1,98 @@
+<div class="container mt-4">
+  <h2 class="mb-3">Employees</h2>
+
+  <!-- Filters: search, company, department -->
+  <div class="row g-2 mb-3">
+    <div class="col-md-4">
+      <input class="form-control"
+             type="text"
+             placeholder="Search by name..."
+             [(ngModel)]="searchTerm"
+             (input)="applyFilters()" />
+    </div>
+
+    <div class="col-md-4">
+      <select class="form-select"
+              [(ngModel)]="selectedCompanyId"
+              (change)="loadEmployeesByCompany()">
+        <option [ngValue]="">-- All Companies --</option>
+        <option *ngFor="let c of companies" [ngValue]="c.id">{{ c.name }}</option>
+      </select>
+    </div>
+
+  
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="isLoading" class="text-center py-4">
+    <div class="spinner-border text-primary" role="status"></div>
+    <div class="mt-2">Loading employees...</div>
+  </div>
+
+  <!-- Table -->
+  <div *ngIf="!isLoading">
+    <table class="table table-bordered table-striped" *ngIf="accountService.isAdmin()&&filteredEmployee.length > 0">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Hire Date</th>
+          <th>Salary</th>
+          <th>Department</th>
+          <th>Company</th>
+          <th>total Leave Remaining</th>
+          
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of filteredEmployee; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ emp.fullName ?? '-' }}</td>
+          <td>{{ emp.title ?? '-' }}</td>
+          <td>{{ emp.email ?? '-' }}</td>
+          <td>{{ emp.address ?? '-' }}</td>
+          <td>{{ emp.hireDate ?? '-' }}</td>
+          <td>{{ emp.salary ?? '-' }}</td>
+          <td>{{ emp.departmentName ?? emp.department?.name ?? '-' }}</td>
+          <td>{{ emp.companyName ?? emp.company?.name ?? '-' }}</td>
+          <td>{{ emp.totalLeaveRemaining ??  0 }}</td>
+          <td>
+            <a class="btn btn-warning btn-sm" *ngIf="accountService.isAdmin()" [routerLink]="['/employees/edit', emp.id]">
+              Edit
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered table-striped" *ngIf="!accountService.isAdmin()&&filteredEmployee.length > 0">
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Title</th>
+          <th>Department</th>
+          <th>Company</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of filteredEmployee; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ emp.fullName ?? '-' }}</td>
+          <td>{{ emp.title ?? '-' }}</td>
+          <td>{{ emp.departmentName ?? emp.department?.name ?? '-' }}</td>
+          <td>{{ emp.companyName ?? emp.company?.name ?? '-' }}</td>
+       
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="filteredEmployee?.length === 0" class="alert alert-info my-3">
+      No employees found.
+    </div>
+  </div>
+</div>

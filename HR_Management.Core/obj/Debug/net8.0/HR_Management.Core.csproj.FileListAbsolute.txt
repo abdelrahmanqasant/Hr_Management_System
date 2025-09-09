@@ -1,0 +1,13 @@
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\HR_Management.Core.csproj.AssemblyReference.cache
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\HR_Management.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\HR_Management.Core.AssemblyInfoInputs.cache
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\HR_Management.Core.AssemblyInfo.cs
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\HR_Management.Core.csproj.CoreCompileInputs.cache
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\HR_Management.Core.sourcelink.json
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\bin\Debug\net8.0\HR_Management.Core.deps.json
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\bin\Debug\net8.0\HR_Management.Core.dll
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\bin\Debug\net8.0\HR_Management.Core.pdb
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\HR_Management.Core.dll
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\refint\HR_Management.Core.dll
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\HR_Management.Core.pdb
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.Core\obj\Debug\net8.0\ref\HR_Management.Core.dll

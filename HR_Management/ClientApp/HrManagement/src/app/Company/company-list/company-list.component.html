@@ -1,0 +1,59 @@
+<div class="container mt-4">
+  <h2>Companies</h2>
+
+  <!-- Filters -->
+  <div class="row mb-3">
+    <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="Search by name"
+             [(ngModel)]="searchTerm" (input)="applyFilters()">
+    </div>
+    <div class="col-md-6">
+      <select class="form-select" [(ngModel)]="selectedIndustry" (change)="applyFilters()">
+        <option *ngFor="let industry of industries" [value]="industry">{{ industry }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  <div *ngIf="isLoading" class="text-center">
+    <div class="spinner-border text-primary" role="status"></div>
+    <p>Loading companies...</p>
+  </div>
+
+  <!-- Table -->
+  <table *ngIf="!isLoading && filteredCompanies.length > 0" class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Industry</th>
+        <th>Departments</th>
+        <th *ngIf="accountService.isAdmin()">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let company of filteredCompanies; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ company.name }}</td>
+        <td>{{ company.address }}</td>
+        <td>{{ company.industry }}</td>
+        <td>{{ company.departmentsCount }}</td>
+
+        <td><a class="btn btn-warning btn-sm" [routerLink]="['/companies/edit', company.id]" *ngIf="accountService.isAdmin()">
+  Edit
+</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Empty -->
+  <div *ngIf="!isLoading && filteredCompanies.length === 0" class="alert alert-warning">
+    No companies found.
+  </div>
+</div>
+<div>
+
+  <a class="btn btn-primary" *ngIf="accountService.isAdmin()" routerLink="/Companies/add" >Add Company</a>
+
+</div>

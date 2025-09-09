@@ -1,0 +1,105 @@
+<div class="container mt-4">
+  <h2>➕ Add Employee</h2>
+
+
+
+
+  <form [formGroup]="addEmployeeForm" (ngSubmit)="addEmployee()">
+    <!-- Employee Name -->
+    <div class="mb-3">
+      <label for="fullName" class="form-label">Employee Name</label>
+      <input id="fullName" type="text" class="form-control" formControlName="fullName" placeholder="Enter Employee name" />
+      <div *ngIf="addEmployee_fullNameFormControl.invalid && (addEmployee_fullNameFormControl.touched ||
+           isAddEmployeeFormSubmitted)"
+           class="text-danger">
+        Employee name is required
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input id="title" type="text" class="form-control" formControlName="title" placeholder="Enter Title" />
+      <div *ngIf="addEmployee_titleFormControl.invalid && (addEmployee_titleFormControl.touched ||
+           isAddEmployeeFormSubmitted)"
+           class="text-danger">
+        title is required
+      </div>
+    </div>
+    <!--email-->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input id="email" type="text" class="form-control" formControlName="email" placeholder="Enter Email" />
+      <span class="text-red" *ngIf="(addEmployee_emailFormControl.touched || isAddEmployeeFormSubmitted)
+&& (addEmployee_emailFormControl.errors?.['required'])">Email Can`t Be Blank</span>
+      <span class="text-red" *ngIf="(addEmployee_emailFormControl.touched || isAddEmployeeFormSubmitted)
+&& (addEmployee_emailFormControl.errors?.['email'])">Email must Be In A Proper Email Address Format</span>
+    </div>
+
+
+    <!--address-->
+    <div class="mb-3">
+      <label for="address" class="form-label">Address</label>
+      <input id="address" type="text" class="form-control" formControlName="address"
+             placeholder="Enter Address" />
+      <div *ngIf="addEmployee_addressFormControl.invalid && (addEmployee_addressFormControl.touched ||
+           isAddEmployeeFormSubmitted)"
+           class="text-danger">
+        Address is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="phoneNumber" class="form-label">Phone Number</label>
+      <input id="phoneNumber" type="text" class="form-control" formControlName="phoneNumber"
+             placeholder="Enter Phone Number" />
+      <div *ngIf="addEmployee_phoneNumberFormControl.invalid && (addEmployee_phoneNumberFormControl.touched ||
+           isAddEmployeeFormSubmitted)"
+           class="text-danger">
+        Phone Number is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="salary" class="form-label">Salary</label>
+      <input id="salary" type="text" class="form-control" formControlName="salary"
+             placeholder="Enter Employee`s Salary" />
+      <div *ngIf="addEmployee_salaryFormControl.invalid && (addEmployee_salaryFormControl.touched ||
+           isAddEmployeeFormSubmitted)"
+           class="text-danger">
+        Salary is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="companyId" class="form-label">company</label>
+      <select id="companyId"  class="form-select" formControlName="companyId">
+        <option value="">--Select Company --</option>
+        <option *ngFor="let company of companies" [value]="company.id">{{company.name}}</option>
+      </select>
+           
+      <div *ngIf="addEmployee_companyIdFormControl.invalid && (addEmployee_companyIdFormControl.touched ||
+           isAddEmployeeFormSubmitted)"
+           class="text-danger">
+        company  is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="departmentId" class="form-label">Department Id</label>
+      <select id="departmentId" class="form-select" formControlName="departmentId">
+        <option value="">-- select department --</option>
+        <option *ngFor="let dept of departments" [value]="dept.id">{{dept.name}}</option>
+      </select>
+            
+      <div *ngIf="addEmployee_departmentIdFormControl.invalid && (addEmployee_departmentIdFormControl.touched ||
+           isAddEmployeeFormSubmitted)"
+           class="text-danger">
+        Department Id is required
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-success" [disabled]="addEmployeeForm.invalid">
+      <i class="bi bi-plus-circle"></i> Add Employee
+    </button>
+  </form>
+</div>
+

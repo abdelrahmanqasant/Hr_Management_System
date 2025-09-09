@@ -1,0 +1,96 @@
+<div class="container mt-4">
+  <h2>✏️ Edit Employee</h2>
+
+  <form [formGroup]="editEmployeeForm" (ngSubmit)="updateEmployee()">
+    <div class="mb-3">
+      <label class="form-label">Employee Name</label>
+      <input formControlName="fullName" class="form-control" placeholder="Enter Employee name" />
+      <div *ngIf="editEmployee_fullNameFormControl.invalid && (editEmployee_fullNameFormControl.touched || isFormSubmitted)"
+           class="text-danger">
+        Employee name is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Title</label>
+      <input formControlName="title" class="form-control" placeholder="Enter title" />
+      <div *ngIf="editEmployee_titleFormControl.invalid && (editEmployee_titleFormControl.touched || isFormSubmitted)" class="text-danger">
+        Employee Title is required
+      </div>
+    </div>
+
+
+
+
+
+
+    <div class="mb-3">
+      <label class="form-label">Address</label>
+      <input formControlName="address" class="form-control"
+             placeholder="Enter Address" />
+      <div *ngIf="editEmployee_addressFormControl.invalid
+           && (editEmployee_addressFormControl.touched || isFormSubmitted)" class="text-danger">
+        Employee Address is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input id="email" type="text" class="form-control" formControlName="email" placeholder="Enter Email" />
+      <span class="text-red" *ngIf="(editEmployee_emailFormControl.touched || isFormSubmitted)
+&& (editEmployee_emailFormControl.errors?.['required'])">Email Can`t Be Blank</span>
+      <span class="text-red" *ngIf="(editEmployee_emailFormControl.touched || isFormSubmitted)
+&& (editEmployee_emailFormControl.errors?.['email'])">Email must Be In A Proper Email Address Format</span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Phone Number</label>
+      <input formControlName="phoneNumber" class="form-control" placeholder="Enter Phone Number" />
+      <div *ngIf="editEmployee_phoneNumberFormControl.invalid
+           && (editEmployee_phoneNumberFormControl.touched || isFormSubmitted)" class="text-danger">
+        Employee Phone Number is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Salary</label>
+      <input formControlName="salary" class="form-control" placeholder="Enter Salary" />
+      <div *ngIf="editEmployee_salaryFormControl.invalid
+           && (editEmployee_salaryFormControl.touched || isFormSubmitted)" class="text-danger">
+        Employee Salary is required
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="companyId" class="form-label">company</label>
+      <select id="companyId" class="form-select" formControlName="companyId">
+        <option value="">--Select Company --</option>
+        <option *ngFor="let company of companies" [value]="company.id">{{company.name}}</option>
+      </select>
+
+      <div *ngIf="editEmployee_companyIdFormControl.invalid && (editEmployee_companyIdFormControl.touched ||
+        isFormSubmitted)"
+           class="text-danger">
+        company  is required
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="departmentId" class="form-label">Department</label>
+      <select id="departmentId" class="form-select" formControlName="departmentId">
+        <option value="">-- select department --</option>
+        <option *ngFor="let dept of departments" [value]="dept.id">{{dept.name}}</option>
+      </select>
+
+      <div *ngIf="editEmployee_departmentIdFormControl.invalid && (editEmployee_departmentIdFormControl.touched ||
+        isFormSubmitted)"
+           class="text-danger">
+        Department Id is required
+      </div>
+    </div>
+
+
+
+
+    <button class="btn btn-success" type="submit" [disabled]="editEmployeeForm.invalid">
+      <i class="bi bi-save"></i> Save Changes
+    </button>
+    <a class="btn btn-secondary ms-2" routerLink="/employees">Cancel</a>
+  </form>
+</div>

@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="page-content">
+    <div class="margin-bottom">
+      <div class="flex">
+        <div class="flex-1" id="top-bar-div">
+          <h2 class="app-title">HR Manager</h2>
+        </div>
+        <div class="flex-1" id="search-box-div">
+          <div class="navbar account-links">
+            <ul *ngIf="!accountService.currentUserName">
+              <li>
+                <a routerLink="/login">Login</a>
+              </li>
+              <li>
+                <a routerLink="/register">Register</a>
+              </li>
+             
+             
+            </ul>
+
+            <ul *ngIf="accountService.currentUserName ">
+              
+              <li>
+                <a href="#" onclick="return false" (click)="onLogOutClicked()">Logout</a>
+              </li>
+              <li *ngIf="accountService.currentUserName">
+                <a routerLink="/ChangePassword">Change Password</a>
+              </li>
+           
+              <li>
+                <a routerLink="/Companies">Companies</a>
+              </li>
+              <li>
+                <a routerLink="/departments">departments</a>
+              </li>
+              <li>
+                <a routerLink="/employees">employees</a>
+              </li>
+              <li>
+                <a routerLink="/leaves">leaves</a>
+              </li>
+            </ul>
+
+       
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

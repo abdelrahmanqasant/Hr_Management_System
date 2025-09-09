@@ -1,0 +1,26 @@
+<div class="w-75 margin-auto">
+  <div class="form-container">
+    <h2>Leave Requests</h2>
+
+    <div *ngFor="let leave of leaves" class="leave-card flex space-between align-center">
+      <div class="leave-info flex flex-column">
+        <span><strong>Employee:</strong> {{leave.employeeName}}</span>
+        <span><strong>Leave Type:</strong> {{leave.leaveTypeName}}</span>
+        <span><strong>Status:</strong> {{leave.status}}</span>
+      </div>
+      <div class="leave-actions flex gap-1">
+        <button [routerLink]="['/leaves/edit', leave.id]" class="button button-blue-back">Edit</button>
+        <button (click)="deleteLeave(leave.id)" class="button button-red-back">Delete</button>
+        <button (click)="changeStatus(leave.id,'Approved')" class="button button-green-back">Approve</button>
+        <button (click)="changeStatus(leave.id,'Rejected')" class="button button-orange-back">Reject</button>
+      </div>
+    </div>
+
+    <div class="form-field flex mt-2">
+      <div class="flex-1">
+        <button [routerLink]="['/leaves/add']" class="button button-green-back w-100">Add Leave</button>
+      </div>
+    </div>
+
+  </div>
+</div>

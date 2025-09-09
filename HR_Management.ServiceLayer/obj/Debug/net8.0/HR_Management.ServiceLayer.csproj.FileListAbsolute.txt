@@ -1,0 +1,16 @@
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Management.ServiceLayer.csproj.AssemblyReference.cache
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Management.ServiceLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Management.ServiceLayer.AssemblyInfoInputs.cache
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Management.ServiceLayer.AssemblyInfo.cs
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Management.ServiceLayer.csproj.CoreCompileInputs.cache
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Management.ServiceLayer.sourcelink.json
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\bin\Debug\net8.0\HR_Management.ServiceLayer.deps.json
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\bin\Debug\net8.0\HR_Management.ServiceLayer.dll
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\bin\Debug\net8.0\HR_Management.ServiceLayer.pdb
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\bin\Debug\net8.0\HR_Management.Core.dll
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\bin\Debug\net8.0\HR_Management.Core.pdb
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Manag.E9B15B89.Up2Date
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Management.ServiceLayer.dll
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\refint\HR_Management.ServiceLayer.dll
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\HR_Management.ServiceLayer.pdb
+C:\Users\ABDOQASANTEEN\source\repos\HR_Management\HR_Management.ServiceLayer\obj\Debug\net8.0\ref\HR_Management.ServiceLayer.dll

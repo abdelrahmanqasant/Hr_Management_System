@@ -1,0 +1,17 @@
+.full-width-table {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.no-data {
+  margin-top: 20px;
+  text-align: center;
+  color: gray;
+  font-style: italic;
+}
